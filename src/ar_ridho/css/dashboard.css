@@ -1,0 +1,37 @@
+.mainFxmlClass {
+    -fx-background-color: #2d3843;
+}
+
+.h-box{
+    -fx-background-color: white;
+}
+
+.table-view, .table-view .column-header-background {
+    -fx-background-color : transparent;
+}
+
+.table-view {
+    -fx-base: #2d3843;
+    -fx-control-inner-background: #2d3843;
+    -fx-background-color: #2d3843;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 35;
+    -fx-border-width: 0 0 2 0;
+    -fx-background-color: transparent;
+    -fx-border-color:
+        transparent
+        transparent
+        white
+        transparent;
+    -fx-border-insets: 0 10 1 0;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-opacity: 1;
+}
+

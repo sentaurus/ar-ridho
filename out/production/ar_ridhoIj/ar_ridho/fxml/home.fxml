@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane id="AnchorPane" fx:id="parent" minHeight="700.0" minWidth="1200.0" prefHeight="400.0" prefWidth="600.0"
+            styleClass="mainFxmlClass" stylesheets="@../css/home.css" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="ar_ridho.kontroller.homeController">
+    <children>
+        <AnchorPane fx:id="pane2" minHeight="645.0" minWidth="1200.0" AnchorPane.bottomAnchor="0.0"
+                    AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="55.0"/>
+        <HBox alignment="CENTER_LEFT" prefWidth="200.0" styleClass="hbox" AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox alignment="CENTER" minHeight="45.0" minWidth="50.0" styleClass="v-box">
+                    <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
+                                   styleClass="v-box">
+                            <image>
+                                <Image url="@../gambar/logo.jpg"/>
+                            </image>
+                        </ImageView>
+                    </children>
+                </VBox>
+                <MenuBar fx:id="menuBar">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Beranda">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#onDash" text="Dashboard"/>
+                                <MenuItem mnemonicParsing="false" onAction="#onKeluar" text="Keluar"/>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Menu">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#onDtguru" text="Data guru"/>
+                                <MenuItem mnemonicParsing="false" onAction="#onAbsgaji" text="Absensi &amp; gaji"/>
+                                <MenuItem mnemonicParsing="false" onAction="#onDetail"
+                                          text="Jabatan &amp; detail gaji"/>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Laporan">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#onLapguru" text="Guru"/>
+                                <MenuItem mnemonicParsing="false" onAction="#onLapabsen" text="Absensi"/>
+                                <MenuItem mnemonicParsing="false" onAction="#onLapgaji" text="Data Gaji"/>
+                                <MenuItem mnemonicParsing="false" onAction="#onLapslip" text="Total Slip"/>
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="945.0">
+                    <children>
+                        <Label minHeight="30.0" text="SMK Islam Ar-Ridho' Depok" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="12.0"/>
+                            </font>
+                            <HBox.margin>
+                                <Insets right="405.0"/>
+                            </HBox.margin>
+                        </Label>
+                        <Label fx:id="user" minHeight="30.0" text="- - -" textFill="WHITE">
+                            <HBox.margin>
+                                <Insets right="10.0"/>
+                            </HBox.margin>
+                            <font>
+                                <Font name="System Bold" size="12.0"/>
+                            </font>
+                        </Label>
+                        <ImageView fx:id="kecil" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true"
+                                   preserveRatio="true">
+                            <image>
+                                <Image url="@../gambar/kecil.png"/>
+                            </image>
+                            <HBox.margin>
+                                <Insets right="10.0"/>
+                            </HBox.margin>
+                        </ImageView>
+                        <ImageView fx:id="tutup" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true"
+                                   preserveRatio="true">
+                            <image>
+                                <Image url="@../gambar/tutup.png"/>
+                            </image>
+                            <HBox.margin>
+                                <Insets right="5.0"/>
+                            </HBox.margin>
+                        </ImageView>
+                    </children>
+                </HBox>
+            </children>
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+        </HBox>
+        <AnchorPane fx:id="login" layoutX="47.0" layoutY="124.0" minHeight="645.0" minWidth="1200.0"
+                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                    AnchorPane.topAnchor="55.0">
+            <children>
+                <VBox layoutX="441.0" layoutY="224.0" prefWidth="319.0">
+                    <children>
+                        <Label text="Nama pengguna" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0"/>
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="5.0"/>
+                            </VBox.margin>
+                        </Label>
+                        <TextField fx:id="nama" prefHeight="25.0" prefWidth="255.0">
+                            <VBox.margin>
+                                <Insets bottom="15.0"/>
+                            </VBox.margin>
+                            <font>
+                                <Font name="System Bold" size="12.0"/>
+                            </font>
+                        </TextField>
+                        <Label text="Kata sandi" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0"/>
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="5.0"/>
+                            </VBox.margin>
+                        </Label>
+                        <PasswordField fx:id="sandi">
+                            <VBox.margin>
+                                <Insets bottom="20.0"/>
+                            </VBox.margin>
+                            <font>
+                                <Font name="System Bold" size="12.0"/>
+                            </font>
+                        </PasswordField>
+                        <HBox alignment="TOP_CENTER" prefWidth="200.0">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#masuk" prefHeight="30.0" prefWidth="150.0"
+                                        text="Masuk" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="15.0"/>
+                                    </font>
+                                </Button>
+                            </children>
+                            <VBox.margin>
+                                <Insets bottom="20.0"/>
+                            </VBox.margin>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

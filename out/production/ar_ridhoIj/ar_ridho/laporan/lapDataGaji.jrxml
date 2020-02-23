@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="lapAbsensi" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape"
+              columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20"
+              uuid="791e8d88-37e4-4d5c-9d09-d6f7be4ebf8c">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <queryString>
+        <![CDATA[select data_gaji.*, data_guru.nama from data_gaji inner join data_guru on data_gaji.nip = data_guru.nip;]]>
+    </queryString>
+    <field name="no_slip" class="java.lang.Integer">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="nip" class="java.lang.String">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="nama" class="java.lang.String">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="masa_kerja" class="java.lang.String">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="pend_terakhir" class="java.lang.String">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="gaji_pokok" class="java.lang.Integer">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="rekening" class="java.lang.Integer">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="70" splitType="Stretch">
+            <image hAlign="Center" vAlign="Middle">
+                <reportElement x="0" y="0" width="100" height="70" uuid="173cbbd3-443b-4ac2-be86-446192eee95d"/>
+                <imageExpression>
+                    <![CDATA["D:\\Pemrograman\\Project_Java\\ar_ridhoIj\\src\\ar_ridho\\gambar\\logo.jpg"]]></imageExpression>
+            </image>
+            <staticText>
+                <reportElement x="100" y="0" width="329" height="45" uuid="d9992e4d-3c96-4290-b3c2-eb96b6f5ce94"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="26" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Laporan Data Gaji Guru]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="100" y="45" width="281" height="25" uuid="b3362405-ab98-40db-9a0a-c3da18872520"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="15" isBold="true"/>
+                </textElement>
+                <text><![CDATA[SMK Islam Ar-Ridho Depok]]></text>
+            </staticText>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="10" splitType="Stretch">
+            <line>
+                <reportElement x="0" y="5" width="802" height="1" uuid="9569e66c-071a-487c-bfff-1dda2fd8e35c"/>
+            </line>
+        </band>
+    </pageHeader>
+    <columnHeader>
+        <band height="30" splitType="Stretch">
+            <rectangle>
+                <reportElement x="0" y="0" width="800" height="30" backcolor="#000000"
+                               uuid="645db27f-ebbe-49b2-8c31-7fa4337421c1"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="0" y="5" width="114" height="20" forecolor="#FFFFFF"
+                               uuid="b8b30dba-35e9-40f6-afa3-aa0c8bce1e97"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[No. Slip]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="114" y="5" width="114" height="20" forecolor="#FFFFFF"
+                               uuid="fdbe1d44-09d8-42fd-a2ef-71464a7d1692"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[NIP]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="228" y="5" width="114" height="20" forecolor="#FFFFFF"
+                               uuid="b96a9326-af67-43cd-ba61-3a0c4416dd8b"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Nama]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="342" y="5" width="114" height="20" forecolor="#FFFFFF"
+                               uuid="ad2f930f-67f8-40ee-932c-4f76fd6c121c"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Masa Kerja]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="456" y="5" width="114" height="20" forecolor="#FFFFFF"
+                               uuid="ffd1de08-7446-4fbf-b6c7-d696992a79cc"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Pend Akhir]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="570" y="5" width="114" height="20" forecolor="#FFFFFF"
+                               uuid="abf3b425-2754-4c02-844a-b016c603313b"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Gaji Pokok]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="684" y="5" width="114" height="20" forecolor="#FFFFFF"
+                               uuid="55febf4a-4e17-4433-911f-5200061d0ea4"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Rekening]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="20" splitType="Stretch">
+            <textField isStretchWithOverflow="true">
+                <reportElement x="0" y="0" width="114" height="20" uuid="a36005b7-5d8d-4482-81da-56350e1707a2"/>
+                <textFieldExpression><![CDATA[$F{no_slip}]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true">
+                <reportElement x="114" y="0" width="114" height="20" uuid="3bcfd67d-3566-497d-b087-99ab0cff7667"/>
+                <textFieldExpression><![CDATA[$F{nip}]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true">
+                <reportElement x="228" y="0" width="114" height="20" uuid="b4050427-efc0-4c97-b6b7-e55842907ead"/>
+                <textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true">
+                <reportElement x="342" y="0" width="114" height="20" uuid="d3e93c2a-f186-497b-af03-4ef782f3798b"/>
+                <textFieldExpression><![CDATA[$F{masa_kerja}]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true">
+                <reportElement x="456" y="0" width="114" height="20" uuid="b11dce7d-1c4b-4206-b7c6-440a706d1d98"/>
+                <textFieldExpression><![CDATA[$F{pend_terakhir}]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true" pattern="¤ #,##0">
+                <reportElement x="570" y="0" width="114" height="20" uuid="e3eeb29f-488f-4185-b172-8665e5e3ac54"/>
+                <textFieldExpression><![CDATA[$F{gaji_pokok}]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true">
+                <reportElement x="684" y="0" width="114" height="20" uuid="dd8ee792-cea1-4fa9-8c04-8bee81566daf"/>
+                <textFieldExpression><![CDATA[$F{rekening}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="10" splitType="Stretch">
+            <line>
+                <reportElement x="0" y="5" width="802" height="1" uuid="a81e1d68-59c1-49e1-b8e9-006c393c1509"/>
+            </line>
+        </band>
+    </columnFooter>
+    <pageFooter>
+        <band height="120" splitType="Stretch">
+            <staticText>
+                <reportElement x="582" y="0" width="40" height="20" uuid="6d5612b2-f399-4112-8db4-e3ad264529b6"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[Depok,]]></text>
+            </staticText>
+            <textField pattern="dd-MMM-yyyy">
+                <reportElement x="622" y="0" width="120" height="20" uuid="a8c27c04-2b4c-4c3d-96d8-5cc248b500b8"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="582" y="80" width="60" height="20" uuid="d3ec7d05-fbc2-4588-850e-e23b0215d0e5"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[Nama    : ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="582" y="100" width="60" height="20" uuid="5b9db729-d467-40c1-9bd2-f83b83a2ba2c"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[Jabatan :]]></text>
+            </staticText>
+        </band>
+    </pageFooter>
+    <summary>
+        <band splitType="Stretch"/>
+    </summary>
+</jasperReport>

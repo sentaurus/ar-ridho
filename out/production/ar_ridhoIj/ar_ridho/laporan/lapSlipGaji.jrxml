@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="lapSlipGaji1" language="groovy" pageWidth="220" pageHeight="298" columnWidth="180" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7ab32d5d-905d-427e-91c8-c849fe6967fd">
+	<property name="ireport.zoom" value="1.7715610000000017"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="no_slip" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$F{no_slip}]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT penggajian.data_guru.nama,
+	penggajian.data_gaji.gaji_pokok,
+	penggajian.data_guru.nip,
+	penggajian.slip_gaji.no_slip,
+	penggajian.slip_gaji.no_telp,
+	penggajian.slip_gaji.uang_makan,
+	penggajian.slip_gaji.tunjangan,
+	penggajian.slip_gaji.uang_transport,
+	penggajian.slip_gaji.pph_10,
+	penggajian.slip_gaji.jml_gaji,
+	penggajian.slip_gaji.tgl_pembayaran
+FROM penggajian.slip_gaji
+	INNER JOIN penggajian.data_gaji ON
+	 penggajian.slip_gaji.no_slip = penggajian.data_gaji.no_slip
+	INNER JOIN penggajian.data_guru ON
+	 penggajian.data_gaji.nip = penggajian.data_guru.nip
+	 WHERE 	penggajian.slip_gaji.no_slip = $P{no_slip}]]>
+	</queryString>
+	<field name="nama" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="gaji_pokok" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nip" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="no_slip" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="no_telp" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="uang_makan" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tunjangan" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="uang_transport" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pph_10" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jml_gaji" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_pembayaran" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="37" splitType="Stretch">
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="0" y="0" width="41" height="37" uuid="cacbbe77-043f-44a8-8752-98ce3986babb"/>
+				<imageExpression><![CDATA["D:\\Pemrograman\\Project_Java\\ar_ridhoIj\\src\\ar_ridho\\gambar\\logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="41" y="22" width="129" height="15" uuid="b93bde52-7fd7-42d2-a4b1-d404343ad1c2"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SMK Islam Ar-Ridho Depok]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="41" y="0" width="129" height="22" uuid="496d35f3-ee7d-42c0-bf13-307b1e83b721"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{no_slip}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="65" height="15" uuid="30c17d4e-2ec1-40bf-a2a4-19bf8d145b6c"/>
+				<text><![CDATA[Gaji Bulan]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="65" y="0" width="115" height="15" uuid="891693ff-20b1-47d1-b20d-33fd01fc10b1"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tgl_pembayaran}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="15" width="65" height="15" uuid="3440591f-b038-4bc5-8cac-5c6e5e671916"/>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="65" y="15" width="115" height="30" uuid="188b401e-8f76-4c71-ad64-864a0c9beead"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="77" splitType="Stretch">
+			<textField pattern="¤ #,##0">
+				<reportElement x="65" y="0" width="115" height="15" uuid="38c734c1-8507-4469-8465-be525e2cc919"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{gaji_pokok}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="65" height="15" uuid="7ec0303b-4de0-43bf-8c6d-13e022866f84"/>
+				<text><![CDATA[Gaji Pokok]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0">
+				<reportElement x="65" y="15" width="115" height="15" uuid="86089d43-794c-4e53-8c84-7e86793ebb65"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{uang_makan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="15" width="65" height="15" uuid="76822f91-d823-4b49-87e9-0b8cc2b343d5"/>
+				<text><![CDATA[Uang Makan]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0">
+				<reportElement x="65" y="30" width="115" height="15" uuid="ff341248-d5b1-4146-86a1-1b63850852a1"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{uang_transport}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="30" width="65" height="15" uuid="7bd98f01-3253-450b-bef6-a5002026a668"/>
+				<text><![CDATA[Transport]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0">
+				<reportElement x="65" y="45" width="115" height="15" uuid="f02c778d-c77d-492c-9480-a53ac764b24c"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tunjangan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="45" width="65" height="15" uuid="d75cc6ad-a480-413a-be10-617ce4a08d24"/>
+				<text><![CDATA[Tunjangan]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0">
+				<reportElement x="65" y="60" width="115" height="15" uuid="f069c4c6-b5c8-46df-a3ba-6bb65ece39ef"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pph_10}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="60" width="65" height="15" uuid="683067ca-e297-4bff-a942-ae79a6583269"/>
+				<text><![CDATA[PPH 10%]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="16" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="65" height="15" uuid="aa72c529-c9b4-4db0-a18f-05740b3a2f5a"/>
+				<text><![CDATA[Total Gaji]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0">
+				<reportElement x="65" y="0" width="115" height="15" uuid="f849c3e7-fc89-4b59-982c-5b663c219882"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jml_gaji}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="170" height="15" uuid="ec9bb184-bbdf-4668-9084-89f8a9b1b772"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nip}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="15" width="65" height="15" uuid="77f516f0-e53c-4918-970a-3163f63c916b"/>
+				<text><![CDATA[No. Telp]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="65" y="15" width="115" height="15" uuid="31addb6c-fcd3-4d9a-8fe5-a0324ce00422"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{no_telp}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

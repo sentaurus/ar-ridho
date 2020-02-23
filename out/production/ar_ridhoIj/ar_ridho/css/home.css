@@ -1,0 +1,44 @@
+.mainFxmlClass {
+    -fx-background-color: #2d3843;
+}
+
+.hbox {
+    -fx-border-width: 1;
+    -fx-border-color: transparent transparent white transparent;
+}
+
+.v-box{
+    -fx-background-color: white;
+    -fx-border-width: 3;
+    -fx-border-color: grey;
+}
+
+.button {
+    -fx-background-color: transparent;
+    -fx-border-color: white; 
+    -fx-text-fill : white;
+    -fx-border-width: 3;
+    -fx-border-radius: 10;
+}
+
+.menu-bar{
+    -fx-background-color: null;
+}
+
+.menu-bar .label {
+    -fx-font-weight: bold; 
+    -fx-text-fill : white;
+}
+
+.menu-item{
+    -fx-background-color: #2d3843;
+    
+}
+
+.menu-item:hover{
+    -fx-background-color : -fx-accent;
+}
+
+.menu-item:selected {
+    -fx-background-color : -fx-accent;    
+}
